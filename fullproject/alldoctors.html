@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Doctors</title>
+    <style>
+        :root {
+            --color-dominant: #1A4870;
+            --color-secondary: #ffffff;
+            --color-navbar: #70b8e8;
+            --color-accent: #1F316F;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: var(--color-navbar);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 1000px;
+            margin: 0;
+            direction: ltr;
+            font-size: 40%;
+        }
+
+        .container {
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            width: 95%;
+            background-color: var(--color-secondary);
+            border-radius: 8px;
+            height: 710px;
+            overflow: hidden;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        .navbar {
+      width: 100%;
+      background-color: var(--color-navbar);
+      display: flex;
+      flex-direction: column; /* Make logo and nav items stack vertically */
+      align-items: flex-start; /* Align items to the left */
+      padding: 4px 14px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.61);
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--color-accent);
+      margin-bottom: 10px; /* Space between logo and nav items */
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      padding: 0;
+    }
+
+    .navbar ul li {
+      display: inline-block;
+      position: relative;
+    }
+
+    .navbar ul li a {
+      color: var(--color-secondary);
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+      padding: 10px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+
+    }
+    
+
+    ul li ul.dropdown li{
+      display: block;        
+
+    }
+
+    ul li ul.dropdown {
+      width: 200px;
+      position: absolute;
+      z-index: 999;
+      display: none;
+      background-color: var(--color-accent);
+      left: -50px;
+      border-radius: 6px;
+    }
+
+
+    .navbar ul li a.mainmenu:hover{
+      background-color:  var(--color-navbar);
+    }
+
+
+    .navbar ul li a:hover {
+      background-color: var(--color-navbar);
+    }
+    .navbar ul li:hover ul.dropdown{
+      display: block;
+
+
+    }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        table, th, td {
+            border: 1px solid var(--color-dominant);
+            font-size: 1rem;
+            
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--color-accent);
+            color: var(--color-secondary);
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .welcome {
+            font-size: 20px;
+            color: var(--color-dominant);
+            font-weight: bold;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .form {
+            width: 100%;
+            padding: 2px;
+        }
+
+        /* Mobile Styles */
+        @media screen and (max-width: 1068px) {
+            .container {
+                width: 95%;
+                flex-direction: column;
+                padding: 20px;
+                background-image: linear-gradient(rgba(255, 255, 255, 0.944), rgba(255, 255, 255, 0.944)),
+                    url("../images/undraw_medicine_b1ol.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 720px;
+                overflow: scroll;
+            }
+
+            .navbar {
+                align-items: start;
+                padding: 15px 20px;
+            }
+
+            .navbar ul {
+                flex-direction: row;
+            }
+
+            .welcome {
+                font-size: 16px;
+                margin: 10px 0;
+                text-align: center;
+                color: #000;
+            }
+
+            .image-div {
+                opacity: 0.1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">Path2Health</div>
+      <ul>
+          <li><a href="C:\Users\Acer\Desktop\js\fullproject\login.html" class="mainmenu">Home</a></li>
+          <!-- patient -->
+        <li><a href="#" class="mainmenu">Patient</a>
+          <ul class="dropdown">
+            <li><a href="C:\Users\Acer\Desktop\js\fullproject\addpatient.html">Add Patient</a></li>
+            <li><a href="">Patient Details</a></li>
+            <li><a href="">All Patient</a></li>
+            <li><a href="">Edit Patient</a></li>
+           </li>
+          </ul>
+
+<!-- doctor -->
+
+          <li><a href="#" class="mainmenu">Doctors</a>
+            <ul class="dropdown">
+              <li><a href="C:\Users\Acer\Desktop\js\fullproject\adddoctor.html">Add Doctor</a></li>
+              <li><a href="">Doctor Details</a></li>
+              <li><a href=C:\Users\Acer\Desktop\js\fullproject\alldoctors.html>All Doctors</a></li>
+              <li><a href="">Edit Doctor</a></li>
+             </li>
+            </ul>
+
+
+<!-- nurse -->
+
+        <li><a href="#" class="mainmenu">Nurse</a>
+          <ul class="dropdown">
+            <li><a href="C:\Users\Acer\Desktop\js\fullproject\addnurse.html">Add Nurse</a></li>
+            <li><a href="">Nurse Details</a></li>
+            <li><a href="">All Nurse</a></li>
+            <li><a href="">Edit Nurse</a></li>
+           </li>
+          </ul>
+
+         <!-- Management Staff -->
+
+
+              <li><a href="#"  class="mainmenu">Management Staff</a>
+                <ul class="dropdown">
+                  <li><a href="C:\Users\Acer\Desktop\js\fullproject\addmng.html">Add Management Staff</a></li>
+                  <li><a href="">Management Staff Details</a></li>
+                  <li><a href="">All Management Staff</a></li>
+                  <li><a href="">Edit Management Staff</a></li>
+                 </li>
+                </ul>
+      </ul>
+    </nav>
+
+
+    <div class="container">
+        <h1 class="welcome">All Doctors</h1>
+        <table id="doctorsTable">
+            <thead>
+                <tr>
+                    <th>Doctor Name</th>
+                    <th>Date</th>
+                    <th>Specialization</th>
+                    <th>Experience</th>
+                    <th>Age</th>
+                    <th>Phone</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Details</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Doctor data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+         // Display doctors data when the page loads
+         window.addEventListener('DOMContentLoaded', function () {
+            const doctors = JSON.parse(getCookie('doctors') || '[]');
+            const tableBody = document.querySelector('#doctorsTable tbody');
+
+            if (doctors.length > 0) {
+                doctors.forEach(doctor => {
+                    const row = document.createElement('tr');
+                    Object.values(doctor).forEach(value => {
+                        const cell = document.createElement('td');
+                        cell.textContent = value;
+                        row.appendChild(cell);
+                    });
+                    tableBody.appendChild(row);
+                });
+            } else {
+                const row = document.createElement('tr');
+                const cell = document.createElement('td');
+                cell.colSpan = 8;
+                cell.textContent = 'No doctors added yet.';
+                row.appendChild(cell);
+                tableBody.appendChild(row);
+            }
+        });
+
+        // Function to get a cookie value by name
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return decodeURIComponent(c.substring(nameEQ.length, c.length));
+            }
+            return null;
+        }
+    </script>
+</body>
+
+</html>
